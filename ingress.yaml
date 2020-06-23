@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: henry-site
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"    
+    cert-manager.io/issuer: "letsencrypt-prod"
+spec:
+  tls:
+    - hosts:
+      - henrypenton.co.uk
+      - www.henrypenton.co.uk
+      secretName: henry-prod-tls
+  rules:
+    - host: henrypenton.co.uk
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: henry-portfolio
+              servicePort: 3000
+    - host: www.henrypenton.co.uk
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: henry-portfolio
+              servicePort: 3000
