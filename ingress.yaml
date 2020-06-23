@@ -18,12 +18,12 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: henry-portfolio
+              serviceName: demo
               servicePort: 3000
     - host: www.henry-testing.co.uk
       http:
         paths:
           - path: /
             backend:
-              serviceName: henry-portfolio
+              serviceName: demo
               servicePort: 3000
