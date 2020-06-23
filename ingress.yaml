@@ -9,18 +9,18 @@ metadata:
 spec:
   tls:
     - hosts:
-      - henry-testing.co.uk
-      - www.henry-testing.co.uk
+      - henrytesting.co.uk
+      - www.henrytesting.co.uk
       secretName: henry-staging-tls
   rules:
-    - host: henry-testing.co.uk
+    - host: henrytesting.co.uk
       http:
         paths:
           - path: /
             backend:
               serviceName: demo
               servicePort: 3000
-    - host: www.henry-testing.co.uk
+    - host: www.henrytesting.co.uk
       http:
         paths:
           - path: /
