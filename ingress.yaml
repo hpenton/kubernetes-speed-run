@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: henry-site
+  name: demo-site
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: "nginx"    
@@ -9,18 +9,18 @@ metadata:
 spec:
   tls:
     - hosts:
-      - henrypenton.co.uk
-      - www.henrypenton.co.uk
-      secretName: henry-prod-tls
+      - henry-testing.co.uk
+      - www.henry-testing.co.uk
+      secretName: henry-staging-tls
   rules:
-    - host: henrypenton.co.uk
+    - host: henry-testing.co.uk
       http:
         paths:
           - path: /
             backend:
               serviceName: henry-portfolio
               servicePort: 3000
-    - host: www.henrypenton.co.uk
+    - host: www.henry-testing.co.uk
       http:
         paths:
           - path: /
