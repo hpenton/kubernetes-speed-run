@@ -33,7 +33,7 @@ apiVersion: v1
 metadata:
   name: demo
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - protocol: TCP
       name: http
